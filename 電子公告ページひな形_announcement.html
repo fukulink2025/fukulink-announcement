@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>株式会社FUKULINK　公告</title>
+  <meta name="description" content="株式会社FUKU-LINKの電子公告（決算公告・重要なお知らせ）を掲載する公式ページです。" />
+  <style>
+    :root{--bg:#f7f7fb;--card:#ffffff;--accent:#0b5fff;--muted:#666}
+    body{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,Arial,sans-serif;background:var(--bg);margin:0;color:#111}
+    header{background:linear-gradient(90deg,#ffffff, #f2f6ff);border-bottom:1px solid #e6e9f2;padding:28px 18px}
+    .container{max-width:980px;margin:24px auto;padding:0 18px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:8px 0 0;color:var(--muted)}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(20,30,80,0.04);margin-top:18px}
+    .ann-list{list-style:none;padding:0;margin:0}
+    .ann-item{display:flex;flex-direction:row;align-items:flex-start;padding:14px;border-bottom:1px dashed #eef2ff}
+    .ann-item:last-child{border-bottom:0}
+    .ann-date{min-width:110px;font-size:13px;color:var(--muted)}
+    .ann-body{flex:1}
+    .ann-title{margin:0;font-weight:600;font-size:15px}
+    .ann-desc{margin:6px 0 0;color:#333}
+    .download{margin-top:8px}
+    a.btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600}
+    footer{max-width:980px;margin:36px auto 80px;padding:0 18px;color:var(--muted);font-size:13px}
+    .notice{font-size:13px;color:#444;margin-top:8px}
+    @media (max-width:600px){.ann-item{flex-direction:column}.ann-date{min-width:0;margin-bottom:8px}}
+  </style>
+</head>
+<body>
+  <!--
+    使い方メモ（必ずお読みください）
+    1) このファイルを /announcement/index.html 等で公開してください（定款に記載するURLを確定すること）。
+    2) COMPANY_NAME とドメイン部分は必ず差し替えてください。
+    3) 過去の公告は削除せず、アーカイブとして残してください（法律上の要件対応のため）。
+    4) 公告を更新する際は必ず掲載日を入れてください（例：2025-10-07）。
+  -->
+
+  <header>
+    <div class="container">
+      <h1>株式会社FUKULINK（仮）　公告</h1>
+      <p class="lead">当ページは当会社の電子公告（決算公告・会社法に基づく公告等）を掲載する公式ページです。ログイン不要で常時ご確認いただけます。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="latest-heading">
+      <h2 id="latest-heading">最新の公告</h2>
+      <p class="notice">下記は当社が掲載する公告の一覧です。各公告は発行日付順（新しい順）に表示されます。PDFは別ウィンドウで開きます。</p>
+
+      <ul id="announcements" class="ann-list" aria-live="polite">
+        <!-- 以下のリストを更新して公告を追加してください -->
+        <li class="ann-item">
+          <div class="ann-date">2025-10-07</div>
+          <div class="ann-body">
+            <p class="ann-title">第1期（2025年10月1日～2026年9月30日）貸借対照表の公告</p>
+            <p class="ann-desc">当社は会社法第440条に基づき、以下のとおり貸借対照表を公告します。</p>
+            <div class="download"><a href="#" class="btn" onclick="alert('PDFをここに置いてください: b/sheet-fy2024.pdf');return false;">貸借対照表（PDF）を表示</a></div>
+          </div>
+        </li>
+
+        <!-- 新しい公告は上に追加してください -->
+      </ul>
+
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>公告の方法について</h2>
+      <p class="notice">当社の定款により、公告は電子公告によって行います。<br>定款に記載しているURL： <strong>https://your-domain.example/announcement</strong></p>
+      <p class="notice">やむを得ない事由により電子公告によることができない場合は、官報に掲載して行います。</p>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>アーカイブ（過去の公告）</h2>
+      <p class="notice">法的要件のため、過去の公告は一定期間削除せずに保管してください。</p>
+      <ul id="archive" class="ann-list" style="margin-top:8px">
+        <!-- アーカイブもここに列挙 -->
+      </ul>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>お問い合わせ</h2>
+      <p class="notice">本公告ページに関するお問い合わせは、下記メールアドレスまでお願いいたします。</p>
+      <p style="margin-top:10px"><strong>メール：</strong>info@your-domain.example</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">最終更新日：<span id="updated">2025-10-07</span>　|　株式会社FUKULINK（仮）</div>
+  </footer>
+
+  <script>
+    /* 簡易: 公告をJSONで外部管理する場合の読み込み例（任意）
+       1) announcements.json を同ディレクトリに置くと、自動で読み込めます。
+       2) サーバー側で静的ファイル生成する方法のほうが確実（推奨）。
+    */
+    (function(){
+      // 日付の自動更新
+      document.getElementById('updated').textContent = new Date().toISOString().slice(0,10);
+
+      // 以下は動的読み込みのサンプル（ブラウザ環境によってはCORSの関係で動かない場合があります）
+      /*
+      fetch('./announcements.json').then(r=>r.json()).then(data=>{
+        const ul = document.getElementById('announcements');
+        ul.innerHTML = '';
+        data.forEach(a=>{
+          const li = document.createElement('li'); li.className='ann-item';
+          const date = document.createElement('div'); date.className='ann-date'; date.textContent = a.date;
+          const body = document.createElement('div'); body.className='ann-body';
+          const title = document.createElement('p'); title.className='ann-title'; title.textContent = a.title;
+          const desc = document.createElement('p'); desc.className='ann-desc'; desc.textContent = a.desc || '';
+          body.appendChild(title); body.appendChild(desc);
+          if(a.pdf){
+            const d = document.createElement('div'); d.className='download';
+            const link = document.createElement('a'); link.className='btn'; link.href = a.pdf; link.target='_blank'; link.textContent='PDFを表示';
+            d.appendChild(link); body.appendChild(d);
+          }
+          li.appendChild(date); li.appendChild(body); ul.appendChild(li);
+        })
+      }).catch(e=>{console.log('announcements.json not loaded', e)})
+      */
+    })();
+  </script>
+</body>
+</html>
